@@ -2,7 +2,7 @@ import os
 from datetime import datetime, timedelta
 
 # Customize your pattern
-start_date = datetime(2025, 1, 1)
+start_date = datetime(2025, 3, 3)
 days = 100  # Total number of days to backfill
 commits_per_day = 5  # Increase this to make squares darker
 
