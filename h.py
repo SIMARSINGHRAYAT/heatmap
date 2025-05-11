@@ -2,16 +2,18 @@ import os
 from datetime import datetime, timedelta
 
 # Customize your pattern
-start_date = datetime(2025, 3, 3)
-days = 100  # Total number of days to backfill
-commits_per_day = 5  # Increase this to make squares darker
+start_date = datetime(2025, 1, 1)
+days = 131
+commits_per_day = 3
 
 for i in range(days):
     date = start_date + timedelta(days=i)
+    date_str = date.strftime("%Y-%m-%dT12:00:00")
+
     for j in range(commits_per_day):
         with open("file.txt", "a") as f:
             f.write(f"{date} - Commit {j}\n")
-        os.system(f'git add file.txt')
-        os.system(f'GIT_AUTHOR_DATE="{date.isoformat()} 12:00:00" GIT_COMMITTER_DATE="{date.isoformat()} 12:00:00" git commit -m "Commit {i}-{j}"')
+        os.system("git add file.txt")
+        os.system(f'set GIT_AUTHOR_DATE={date_str} && set GIT_COMMITTER_DATE={date_str} && git commit -m "Commit {i}-{j}"')
 
 print("Done. Now push the repo.")
