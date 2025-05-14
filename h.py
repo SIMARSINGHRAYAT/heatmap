@@ -2,9 +2,9 @@ import os
 from datetime import datetime, timedelta
 
 # Customize your pattern
-start_date = datetime(2025, 1, 1)
-days = 131
-commits_per_day = 3
+start_date = datetime(2023, 1, 1)
+days = 700
+commits_per_day = 1
 
 for i in range(days):
     date = start_date + timedelta(days=i)
