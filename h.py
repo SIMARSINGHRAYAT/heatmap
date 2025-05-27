@@ -3,8 +3,8 @@ import random
 from datetime import datetime, timedelta
 
 # Customize your pattern
-start_date = datetime(2022, 1, 1)
-days = 700
+start_date = datetime(2025, 1, 1)
+days = 135
 min_commits = 0
 max_commits = 10  # Max commits per day
 
